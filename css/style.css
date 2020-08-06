@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins:wght@300&display=swap');
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    background-color: #eee;
+    width: 30em;
+    margin: 5em auto;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.form-group input {
+    height: 4em;
+}
+
+.form-group button {
+    height: 4em;
+}
+
+.create-account-btn {
+    background-color: #eda63d;
+    color: white;
+}
