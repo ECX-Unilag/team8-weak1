@@ -41,6 +41,7 @@ exports.productValidationRules = () => {
         body("description").notEmpty().trim().withMessage("description is required"),
         body("quantity").notEmpty().isNumeric().optional(),
         body("remarks").notEmpty().trim().optional(),
+        body("status").optional(),
         body("date").optional(),
     ]
 }

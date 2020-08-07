@@ -25,6 +25,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    status:{
+        type: String,
+        default: "false"
+    },
     date: {
         type: String,
         default: Date.now()
