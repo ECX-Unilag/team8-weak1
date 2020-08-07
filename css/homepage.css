@@ -8,6 +8,10 @@
     right: 0;
 }
 
+.large-card .card .card-body a {
+    text-decoration: none;
+}
+
 .home-logo {
     color: #eda63d !important;
 }
@@ -43,10 +47,13 @@
     margin-top: -2em;
 }
 
+* {
+    font-family: 'Poppins';
+}
+
 body {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 0px;
     font-size: 17px;
     color: #6d767a;
@@ -55,7 +62,6 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
 }
 
 h1,
