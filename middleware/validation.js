@@ -33,6 +33,20 @@ exports.loginValidationRules = () => {
     ]
 }
 
+exports.productValidationRules = () => {
+    return [
+
+        body("name").notEmpty().trim().withMessage("product name is required"),
+        body("category").notEmpty().trim().withMessage("category name is required"),
+        body("description").notEmpty().trim().withMessage("description is required"),
+        body("quantity").notEmpty().isNumeric().optional(),
+        body("remarks").notEmpty().trim().optional(),
+        body("date").optional(),
+    ]
+}
+
+
+
 
 
 exports.validation = (req, res, next) => {

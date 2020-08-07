@@ -11,6 +11,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 
 const userRoutes = require("./routes/user");
+const productRoutes = require("./routes/product");
 
 const app = express();
 
@@ -48,6 +49,7 @@ app.use(xss());
 app.use(hpp());
 
 app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/product", productRoutes);
 
 
 app.get("/", (req, res) => {
@@ -65,8 +67,8 @@ app.all("*", (req, res, next) => {
     });
 });
 
-const DB =  process.env.CONNECTION_STRING
-  
+const DB = process.env.CONNECTION_STRING
+
 mongoose
     .connect(DB, {
         useNewUrlParser: true,
