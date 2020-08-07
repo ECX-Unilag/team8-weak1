@@ -7,7 +7,7 @@ const {
 } = require("../middleware/validation")
 
 router.post('/create', productValidationRules(), validation, userController.addProduct);
-
+router.get('/', userController.getProducts);
 
 
 

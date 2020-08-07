@@ -12,3 +12,12 @@ exports.addProduct = async (req, res) => {
         return errorResMsg(res, 500, err);
     }
 }
+
+exports.getProducts = async (req, res) => {
+    try {
+        const Products = await Product.find();
+        return successResMsg(res, 200, Products);
+    } catch (err) {
+        return errorResMsg(res, 500, err);
+    }
+}
