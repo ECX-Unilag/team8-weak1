@@ -2,13 +2,15 @@ const mongoose = require("mongoose");
 
 const logSchema = new mongoose.Schema({
     user: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     },
     action: {
         type: String,
     },
     product: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product"
     },
     quantity: {
         type: Number,

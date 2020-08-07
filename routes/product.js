@@ -5,12 +5,12 @@ const {
     productValidationRules,
     validation
 } = require("../middleware/validation")
+const auth = require("../middleware/auth");
 
-
-router.get('/', userController.getProducts);
-router.post('/', productValidationRules(), validation, userController.addProduct);
-router.patch('/:id', productValidationRules(), validation, userController.updateProduct);
-router.delete('/:id', userController.deleteProduct);
+router.get('/', auth.authentication("supervisor","admin"), userController.getProducts);
+router.post('/', auth.authentication("user","supervisor","admin"), productValidationRules(), validation, userController.addProduct);
+router.patch('/:id', auth.authentication("user","supervisor","admin"), productValidationRules(), validation, userController.updateProduct);
+router.delete('/:id', auth.authentication("user","supervisor","admin"), userController.deleteProduct);
 
 
 
