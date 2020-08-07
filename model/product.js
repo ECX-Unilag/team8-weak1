@@ -16,20 +16,14 @@ const productSchema = new mongoose.Schema({
         required: [true, "Please provide the product description"],
         trim: true,
     },
-    image: {
-        type: String,
-        required: [true, "Please provide the product image"],
-    },
-    phoneNumber: {
-        type: String,
-        required: [true, "Please provide your phone number"],
-    },
     quantity: {
         type: Number,
         required: [true, "Please provide your quantity"],
+        default: 0
     },
     remarks: {
         type: String,
+        default: ""
     },
     date: {
         type: String,
