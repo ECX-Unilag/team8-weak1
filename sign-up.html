@@ -2,56 +2,187 @@
 <html lang="en">
 
 <head>
-    <title></title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
     <link href="css/style.css" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/homepage.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
 </head>
 
 <body>
-    <main>
-        <section>
-            <div class="card">
-                <article class="card-body">
-                    <h1 class="card-title mb-4 mt-1">Sign Up</h1>
-                    <form>
-                        <div class="form-group">
-                            <input name="" class="form-control" placeholder="Enter your firstname" type="text">
-                        </div>
-                        <!-- form-group// -->
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Enter your lastname" type="text">
-                        </div>
-                        <!-- form-group// -->
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Enter your email" type="email">
-                        </div>
-                        <!-- form-group// -->
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Enter your phone number" type="text">
-                        </div>
-                        <!-- form-group// -->
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Enter new password" type="password">
-                        </div>
-                        <br>
-                        <div class="checkbox">
-                            <label> <input type="checkbox"> I agree to the terms and conditions of use* </label>
-                        </div>
-                        <br>
-                        <!-- form-group// -->
-                        <div class="form-group">
-                            <button type="submit" class="btn  btn-block create-account-btn"> Create Account </button>
-                        </div>
-                        <!-- form-group// -->
-                    </form>
-                </article>
-            </div>
+    <header class=" header-container">
+        <div class="container">
 
-        </section>
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent text-white">
+                <a class="navbar-brand home-logo" href="#">Inventory</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon bg-white"></span>
+                </button>
+
+                <div class="collapse navbar-collapse nav-section" id="navbarSupportedContent">
+
+                    <ul class="navbar-nav home-nav ">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/homepage.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Profile
+                            </a>
+                            <div class="dropdown-menu dropdown-text" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Edit profile</a>
+                                <a class="dropdown-item" href="#">View Logs</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-red" href="#">Log out</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sign-up.html">Signup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/log-in.html">LogIn</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <article>
+                <h1 class="card-title mb-4 mt-1">Sign Up</h1>
+                <form>
+                    <div class="form-group">
+                        <input name="" class="form-control" placeholder="Enter your firstname" type="text">
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Enter your lastname" type="text">
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Enter your email" type="email">
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Enter your phone number" type="text">
+                    </div>
+                    <!-- form-group// -->
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Enter new password" type="password">
+                    </div>
+                    <br>
+                    <div class="checkbox">
+                        <label> <input type="checkbox"> I agree to the terms and conditions of use* </label>
+                    </div>
+                    <br>
+                    <!-- form-group// -->
+                    <div class="form-group">
+                        <button type="submit" class="btn  btn-block create-account-btn"> Create Account </button>
+                    </div>
+                    <!-- form-group// -->
+                </form>
+            </article>
+        </div>
+
     </main>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                    <div class="ft-logo">
+                        <h1>Inventory.</h1>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-line">
+            <div class="row ">
+                <!-- footer-about -->
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+                    <div class="footer-widget ">
+                        <div class="footer-title">Company</div>
+                        <ul class="list-unstyled">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Legal & Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.footer-about -->
+                <!-- footer-links -->
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+                    <div class="footer-widget ">
+                        <div class="footer-title">Quick Links</div>
+                        <ul class="list-unstyled">
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.footer-links -->
+                <!-- footer-links -->
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
+                    <div class="footer-widget ">
+                        <div class="footer-title">Social</div>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Google +</a></li>
+                            <li><a href="#">Linked In</a></li>
+                            <li><a href="#">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.footer-links -->
+                <!-- footer-links -->
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-6 col-6 ">
+                    <div class="footer-widget ">
+                        <h3 class="footer-title">Subscribe Newsletter</h3>
+                        <form>
+                            <div class="newsletter-form">
+                                <input class="form-control" placeholder="Enter Your Email address" type="text">
+                                <button class="btn btn-default btn-sm" type="submit">Go</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.footer-links -->
+                <!-- tiny-footer -->
+            </div>
+            <div class="row ">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
+                    <div class="tiny-footer">
+                        <p>Copyright © All Rights Reserved 2020 </p>
+                    </div>
+                </div>
+                <!-- /. tiny-footer -->
+            </div>
+        </div>
+    </div>
+    <!-- /.footer -->
+
+
 </body>
 
 </html>
