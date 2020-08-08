@@ -12,6 +12,7 @@ const mongoose = require("mongoose");
 
 const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/product");
+const logRoutes = require("./routes/log");
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use(hpp());
 
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/product", productRoutes);
+app.use("/api/v1/log", logRoutes);
 
 
 app.get("/", (req, res) => {

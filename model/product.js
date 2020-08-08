@@ -25,6 +25,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    status: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }],
     date: {
         type: String,
         default: Date.now()
