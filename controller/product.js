@@ -24,7 +24,16 @@ exports.getProducts = async (req, res) => {
 
 exports.updateProduct = async (req, res) => {
     try {
-        const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+        const oldProduct = await Product.findById({
+            _id: req.params.id
+        });
+        const oldcount = oldProduct.quantity;
+        const newcount = oldProduct.quantity + req.body.quantity
+        const product = await Product.findByIdAndUpdate(req.params.id, {
+            name: req.body.name,
+            category: req.body.category,
+            quantity: newcount
+        }, {
             new: true,
         })
         return successResMsg(res, 200, product);

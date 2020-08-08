@@ -13,8 +13,8 @@ const productSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: [true, "Please provide the product description"],
         trim: true,
+        default: ""
     },
     quantity: {
         type: Number,
