@@ -39,16 +39,26 @@ exports.getProducts = async (req, res) => {
 exports.updateProduct = async (req, res) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
-        const decodedToken = jwt.verify(token, process.env.SECRET);
+        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
         const id = decodedToken.id;
-        const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+        const oldProduct = await Product.findById({
+            _id: req.params.id
+        });
+        const newcount = oldProduct.quantity + req.body.quantity
+        console.log(newcount)
+        const product = await Product.findByIdAndUpdate(req.params.id, {
+            name: req.body.name,
+            category: req.body.category,
+            quantity: newcount
+        }, {
             new: true,
-        })
+        });
+
         const logObject = {
             user: id,
             action: "Update Product",
-            product: newProduct._id,
-            quantity: newProduct.quantity,
+            product: product._id,
+            quantity: product.quantity,
         }
         const log = await Log.create(logObject);
         return successResMsg(res, 200, product);
@@ -60,7 +70,7 @@ exports.updateProduct = async (req, res) => {
 exports.deleteProduct = async (req, res) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
-        const decodedToken = jwt.verify(token, process.env.SECRET);
+        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
         const id = decodedToken.id;
         const product = await Product.findByIdAndDelete({
             _id: req.params.id
@@ -68,8 +78,8 @@ exports.deleteProduct = async (req, res) => {
         const logObject = {
             user: id,
             action: "Delete Product",
-            product: newProduct._id,
-            quantity: newProduct.quantity,
+            product: product._id,
+            quantity: product.quantity,
         }
         const log = await Log.create(logObject);
         return successResMsg(res, 200, product);

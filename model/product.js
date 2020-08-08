@@ -13,8 +13,8 @@ const productSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: [true, "Please provide the product description"],
         trim: true,
+        default: ""
     },
     quantity: {
         type: Number,
@@ -25,10 +25,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
-    status:{
-        type: String,
-        default: "false"
-    },
+    status: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }],
     date: {
         type: String,
         default: Date.now()
