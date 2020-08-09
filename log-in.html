@@ -1,176 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/homepage.css">
-    <link href="css/style.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
-
+    <title></title>
+    <link rel="stylesheet" href="/css/login.css">
 </head>
-
 <body>
-    <header class=" header-container">
-        <div class="container">
+    <section class="container">
+        <div class="form">
+            <h1>Login</h1>
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent text-white">
-                <a class="navbar-brand home-logo" href="#">Inventory</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon bg-white"></span>
-                </button>
+            <div class="form-group">
+                <input type="text" class="email" placeholder="Your Email">
+            </div>
 
-                <div class="collapse navbar-collapse nav-section" id="navbarSupportedContent">
+            <div class="form-group">
+                <input type="text" class="password" placeholder="Your Password">
+            </div>
 
-                    <ul class="navbar-nav home-nav ">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/sign-up.html">Signup</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/log-in.html">LogIn</a>
-                        </li>
-                    </ul>
-
+            <div class="column">
+                <div class="checkbox">
+                    <label><input type="checkbox" name="" id="">Remember me</label>
                 </div>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-
-        <div class="card">
-            <article>
-                <h1 class="card-title mb-4 mt-1">Login</h1>
-                <form id="login">
-                    <div class="form-group">
-                        <input class="form-control email" placeholder="Enter your email" type="email" required>
-                    </div>
-                    <!-- form-group// -->
-
-                    <!-- form-group// -->
-                    <div class="form-group">
-                        <input class="form-control password" placeholder="Enter password" type="password" required>
-                    </div>
-
-                    <br>
-                    <!-- form-group// -->
-                    <div class="loader none">Loading...</div>
-                    <div class="error none"></div>
-                    <div class="form-group">
-                        <button type="submit" class="btn  btn-block create-account-btn"> Login </button>
-                    </div>
-                    <!-- form-group// -->
-                </form>
-            </article>
-        </div>
-
-    </main>
-
-    <!-- footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="row ">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                    <div class="ft-logo">
-                        <h1>Inventory.</h1>
-                    </div>
+    
+                <div class="form-group">
+                    <button type="submit" class="login">Log In</button>
                 </div>
             </div>
-            <hr class="footer-line">
-            <div class="row ">
-                <!-- footer-about -->
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                    <div class="footer-widget ">
-                        <div class="footer-title">Company</div>
-                        <ul class="list-unstyled">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Legal & Privacy</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /.footer-about -->
-                <!-- footer-links -->
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                    <div class="footer-widget ">
-                        <div class="footer-title">Quick Links</div>
-                        <ul class="list-unstyled">
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /.footer-links -->
-                <!-- footer-links -->
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 ">
-                    <div class="footer-widget ">
-                        <div class="footer-title">Social</div>
-                        <ul class="list-unstyled">
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Google +</a></li>
-                            <li><a href="#">Linked In</a></li>
-                            <li><a href="#">Facebook</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /.footer-links -->
-                <!-- footer-links -->
-                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-6 col-6 ">
-                    <div class="footer-widget ">
-                        <h3 class="footer-title">Subscribe Newsletter</h3>
-                        <form>
-                            <div class="newsletter-form">
-                                <input class="form-control" placeholder="Enter Your Email address" type="text">
-                                <button class="btn btn-default btn-sm" type="submit">Go</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- /.footer-links -->
-                <!-- tiny-footer -->
-            </div>
-            <div class="row ">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center ">
-                    <div class="tiny-footer">
-                        <p>Copyright © All Rights Reserved 2020 </p>
-                    </div>
-                </div>
-                <!-- /. tiny-footer -->
+        
+            <div class="links">
+                <a href="#" class="forgot-link">Forgot your password?</a>
+                <br>
+                <a href="#" class="google-link">Login with Google</a>
+                <br>
+                <a href="/sign-up.html" class="signup">Don't have an account? Sign up</a>
             </div>
         </div>
-    </div>
-    <!-- /.footer -->
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
-    <script src="js/login.js"></script>
-    <script>
-        (function () {
-            if (localStorage.getItem("InventStore")) {
-                let userData = JSON.parse(localStorage.getItem("InventStore"));
-                console.log(userData.role)
-                if (userData.role === "user") {
-                    window.location.href = "homepage.html";
-                } else if (userData.role === "supervisor") {
-                    window.location.href = "homepage.html";
-                } else {
-                    window.location.href = "homepage.html";
-                }
-
-            }
-        })()
-    </script>
+    </section>
 </body>
-
 </html>
