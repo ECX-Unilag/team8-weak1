@@ -33,24 +33,6 @@
                 <div class="collapse navbar-collapse nav-section" id="navbarSupportedContent">
 
                     <ul class="navbar-nav home-nav ">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/homepage.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Profile
-                            </a>
-                            <div class="dropdown-menu dropdown-text" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Edit profile</a>
-                                <a class="dropdown-item" href="#">View Logs</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-red" href="#">Log out</a>
-                            </div>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/sign-up.html">Signup</a>
                         </li>
@@ -69,34 +51,45 @@
         <div class="card">
             <article>
                 <h1 class="card-title mb-4 mt-1">Sign Up</h1>
-                <form>
+                <form id="signup">
                     <div class="form-group">
-                        <input name="" class="form-control" placeholder="Enter your firstname" type="text">
+                        <input name="" class="form-control firstname" name="firstname"
+                            placeholder="Enter your firstname" type="text" autocomplete="true" required>
                     </div>
                     <!-- form-group// -->
                     <div class="form-group">
-                        <input class="form-control" placeholder="Enter your lastname" type="text">
+                        <input class="form-control lastname" name="lastname" placeholder="Enter your lastname"
+                            type="text" autocomplete="true" required>
                     </div>
                     <!-- form-group// -->
                     <div class="form-group">
-                        <input class="form-control" placeholder="Enter your email" type="email">
+                        <input class="form-control email" placeholder="Enter your email" type="email"
+                            autocomplete="true" required>
                     </div>
                     <!-- form-group// -->
                     <div class="form-group">
-                        <input class="form-control" placeholder="Enter your phone number" type="text">
+                        <input class="form-control phone" placeholder="Enter your phone number" type="text"
+                            autocomplete="true" required>
                     </div>
                     <!-- form-group// -->
                     <div class="form-group">
-                        <input class="form-control" placeholder="Enter new password" type="password">
+                        <input class="form-control password" placeholder="Enter password" type="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control password1" placeholder="Confirn password" type="password" required>
                     </div>
                     <br>
                     <div class="checkbox">
-                        <label> <input type="checkbox"> I agree to the terms and conditions of use* </label>
+                        <label> <input type="checkbox" class="check"> I agree to the terms and conditions of use*
+                        </label>
                     </div>
                     <br>
+                    <div class="loader none">Loading...</div>
+                    <div class="error none"></div>
                     <!-- form-group// -->
                     <div class="form-group">
-                        <button type="submit" class="btn  btn-block create-account-btn"> Create Account </button>
+                        <button type="submit" class="btn create  btn-block create-account-btn" disabled>Create
+                            account</button>
                     </div>
                     <!-- form-group// -->
                 </form>
@@ -182,7 +175,23 @@
     </div>
     <!-- /.footer -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="js/signup.js"></script>
+    <script>
+        (function () {
+            if (localStorage.getItem("InventStore")) {
+                let userData = JSON.parse(localStorage.getItem("InventStore"));
+                if (userData.role === "user") {
+                    window.location.href = "homepage.html";
+                } else if (userData.role === "supervisor") {
+                    window.location.href = "homepage.html";
+                } else {
+                    window.location.href = "homepage.html";
+                }
 
+            }
+        })()
+    </script>
 </body>
 
 </html>
