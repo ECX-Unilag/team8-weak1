@@ -33,24 +33,6 @@
                 <div class="collapse navbar-collapse nav-section" id="navbarSupportedContent">
 
                     <ul class="navbar-nav home-nav ">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/homepage.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Profile
-                            </a>
-                            <div class="dropdown-menu dropdown-text" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Edit profile</a>
-                                <a class="dropdown-item" href="#">View Logs</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-red" href="#">Log out</a>
-                            </div>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/sign-up.html">Signup</a>
                         </li>
@@ -67,23 +49,25 @@
     <main>
 
         <div class="card">
-            <article class="card-body">
+            <article>
                 <h1 class="card-title mb-4 mt-1">Login</h1>
-                <form>
+                <form id="login">
                     <div class="form-group">
-                        <input class="form-control" placeholder="Enter your email" type="email">
+                        <input class="form-control email" placeholder="Enter your email" type="email" required>
                     </div>
                     <!-- form-group// -->
 
                     <!-- form-group// -->
                     <div class="form-group">
-                        <input class="form-control" placeholder="Enter new password" type="password">
+                        <input class="form-control password" placeholder="Enter password" type="password" required>
                     </div>
 
                     <br>
                     <!-- form-group// -->
+                    <div class="loader none">Loading...</div>
+                    <div class="error none"></div>
                     <div class="form-group">
-                        <button type="submit" class="btn  btn-block create-account-btn"> Create Account </button>
+                        <button type="submit" class="btn  btn-block create-account-btn"> Login </button>
                     </div>
                     <!-- form-group// -->
                 </form>
@@ -169,7 +153,24 @@
     </div>
     <!-- /.footer -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="js/login.js"></script>
+    <script>
+        (function () {
+            if (localStorage.getItem("InventStore")) {
+                let userData = JSON.parse(localStorage.getItem("InventStore"));
+                console.log(userData.role)
+                if (userData.role === "user") {
+                    window.location.href = "homepage.html";
+                } else if (userData.role === "supervisor") {
+                    window.location.href = "homepage.html";
+                } else {
+                    window.location.href = "homepage.html";
+                }
 
+            }
+        })()
+    </script>
 </body>
 
 </html>
