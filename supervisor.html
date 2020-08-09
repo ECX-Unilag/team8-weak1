@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Supervisor Entry</title>
     <link rel="stylesheet" href="css/homepage.css">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <!------ Include the above in your HEAD tag ---------->
 
 </head>
@@ -27,7 +27,7 @@
 
                     <ul class="navbar-nav home-nav ">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/homepage.html">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="homepage.html">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
@@ -53,73 +53,68 @@
 
     <main>
         <div class="container-fluid hero">
-            <div class="container text-white" class="hero-2">
+            <div class="container text-white flex-row flex-grow-1" class="hero-2">
                 <p class="hero-2-text" style="bottom:0;left:0; position: absolute;">
-                    <h1> Manage Inventory</h1>
+                    <h2> Supervisor Entries</h2>
                 </p>
+                <div class="input-group mb-3 w-50">
+                    <input style="height: 3em;" type="text" class="form-control" placeholder="Search for products" aria-label="Search for products" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-warning text-white" type="submit" id="button-addon2">Search</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container large-card">
-
-            <div class="card" style="display: flex; flex-direction: row; flex-wrap: wrap;">
-
-                <div class="card-body">
-                    <h5 class="card-title"> </h5>
-                    <div class="card mb-3" style="min-width: 18rem;">
-                        <div class="card-header text-black">Activity Log</div>
-                        <div class="card-body">
-
-                            <table class="table table-responsive table-active">
-                                <th>Timestamp</th>
-                                <th>Description</th>
-                                <tr>
-                                    <td>12:30:01 1245</td>
-                                    <td>User logged in to inventory</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
-
-                <div class="card-body">
-                    <h5 class="card-title"> </h5>
-                    <div class="card mb-3" style="max-width: 18rem;">
-                        <div class="card-header text-black">Products</div>
-                        <div class="card-body">
-                            <p class="add-product">
-                                <a href="product-list-page.html" class="fa fa-plus">
-                                    View all Products
-                                </a>
-                            </p>
-                            <p data-toggle="modal" data-target="#exampleModal">
-                                <a href="#" class="fa fa-plus">
-                                    Add Product
-                                </a>
-                            </p>
-                            <p data-toggle="modal" data-target="#exampleUpdateProductModal">
-                                <a href="#" class="fa fa-plus">
-                                    Update Product
-                                </a>
-                            </p>
-                            <p data-toggle="modal" data-target="#exampleViewCategoryModal">
-                                <a href="#" class="fa fa-eye">
-                                    View Category
-                                </a>
-                            </p>
-                            <p data-toggle="modal" data-target="#exampleAddCategoryModal">
-                                <a href="#" class="fa fa-plus">
-                                    Add Category
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
+        <div class="container ">
 
 
-
-            </div>
+            <table class="table  table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Comment</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Kelvin Tutunor</td>
+                        <td>Surround Sound stereo</td>
+                        <td>Electronics</td>
+                        <td>15</td>
+                        <td>
+                            <button href="#" class="btn btn-info">Confirm</button> &nbsp;&nbsp;&nbsp;
+                            <button href="#" class="btn btn-danger">Decline</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>John Masari</td>
+                        <td>Surround Sound sterio</td>
+                        <td>Electronics</td>
+                        <td>15</td>
+                        <td>
+                            <button href="#" class="btn btn-info">Confirm</button> &nbsp;&nbsp;&nbsp;
+                            <button href="#" class="btn btn-danger">Decline</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Alfred Musa</td>
+                        <td>Surround Sound sterio</td>
+                        <td>Electronics</td>
+                        <td>15</td>
+                        <td>
+                            <button href="#" class="btn btn-info">Confirm</button> &nbsp;&nbsp;&nbsp;
+                            <button href="#" class="btn btn-danger">Decline</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
     </main>
@@ -201,55 +196,6 @@
     </div>
     <!-- /.footer -->
 
-    <!-- View Category Modal -->
-    <div class="modal fade" id="exampleViewCategoryModal" tabindex="-1" aria-labelledby="exampleProductModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleViewCategoryModalLabel">View Product Categories</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    All Categories here
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Add Category Modal -->
-    <div class="modal fade" id="exampleAddCategoryModal" tabindex="-1" aria-labelledby="exampleAddCategoryModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleAddCategoryModalLabel">Add Stock Category</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <input name="" class="form-control" placeholder="Category Name" type="text">
-                        </div>
-                        <!-- form-group// -->
-                        <div class="form-group">
-                            <input class="form-control" placeholder=" Category Description" type="text">
-                        </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Category</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Add Product Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -290,13 +236,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleProductModalLabel">View All Sales</h5>
+                    <h5 class="modal-title" id="exampleProductModalLabel">View Product Inventory</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    All Sales here
+                    All Products here
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -304,46 +250,9 @@
             </div>
         </div>
     </div>
-
-    <!-- Update Product Modal -->
-    <div class="modal fade" id="exampleUpdateProductModal" tabindex="-1" aria-labelledby="exampleUpdateProductModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleUpdateProductModalLabel">Update Product</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <input name="" class="form-control" placeholder="Product Name" type="text">
-                        </div>
-                        <!-- form-group// -->
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Product Category" type="text">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Product Description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Product Image" type="file">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Update</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
 </html>
