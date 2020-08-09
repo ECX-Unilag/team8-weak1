@@ -7,7 +7,7 @@ const {
 } = require("../middleware/validation")
 const auth = require("../middleware/auth");
 
-router.get('/', auth.authentication("supervisor","admin"), userController.getProducts);
+router.get('/', auth.authentication("user","supervisor","admin"), userController.getProducts);
 router.post('/', auth.authentication("user","supervisor","admin"), productValidationRules(), validation, userController.addProduct);
 router.patch('/:id', auth.authentication("user","supervisor","admin"), productValidationRules(), validation, userController.updateProduct);
 router.delete('/:id', auth.authentication("user","supervisor","admin"), userController.deleteProduct);
