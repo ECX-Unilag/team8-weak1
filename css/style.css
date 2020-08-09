@@ -8,14 +8,14 @@ body {
 
 .card {
     background-color: #eee;
-    width: 30em;
+    width: 500px;
     margin: 5em auto;
     padding: 2em;
     border-radius: 1em;
 }
 
 .form-group input {
-    height: 4em;
+    height: 60px;
 }
 
 .form-group button {
@@ -25,4 +25,17 @@ body {
 .create-account-btn {
     background-color: #eda63d;
     color: white;
+}
+
+@media (max-width:500px){
+    .card {
+        background-color: #eee;
+        width: 90%;
+        margin: 5em auto;
+        padding: 2em;
+        border-radius: 1em;
+    }
+
+    
+    
 }
