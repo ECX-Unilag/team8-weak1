@@ -13,3 +13,15 @@ exports.getLog = async (req, res) => {
         return errorResMsg(res, 500, err);
     }
 }
+
+
+exports.getUserLog = async (req, res) => {
+    try {
+        console.log(req.params.id)
+        const Logs = await Log.find({ user: req.params.id}).populate("user").populate("product")
+        return successResMsg(res, 200, Logs);
+    } catch (err) {
+        return errorResMsg(res, 500, err);
+    }
+}
+
