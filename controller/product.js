@@ -9,7 +9,6 @@ const {
 exports.addProduct = async (req, res) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
-        console.log(process.env.SECRET)
         const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
         const id = decodedToken.id;
         const newProduct = await Product.create(req.body);
