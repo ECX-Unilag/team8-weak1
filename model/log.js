@@ -15,6 +15,10 @@ const logSchema = new mongoose.Schema({
     quantity: {
         type: Number,
     },
+    status: {
+        type:"string",
+        default: "false"
+    },
     date: {
         type: String,
         default: Date.now()
