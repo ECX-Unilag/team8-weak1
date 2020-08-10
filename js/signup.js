@@ -42,7 +42,6 @@ const submitSignup = (evt) => {
             .then(res => res.json())
             .then(res => {
                 if (res.status === "success") {
-                    localStorage.setItem("InventStore", JSON.stringify(res.data))
                     window.location.href = "log-in.html"
                 } else {
                     console.log(res);
