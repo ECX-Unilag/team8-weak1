@@ -168,7 +168,7 @@ const productAdded = (evt) => {
                 element.classList.add("success")
                 success.appendChild(element);
                 setTimeout(() => {
-                    window.location.href = "homepage.html";
+                    window.location.href = "index.html";
                 }, 2000)
             }
 
@@ -213,7 +213,7 @@ const productUpdated = (evt) => {
                 element.classList.add("success")
                 success2.appendChild(element);
                 setTimeout(() => {
-                    window.location.href = "homepage.html";
+                    window.location.href = "index.html";
                 }, 2000)
             }
 
@@ -249,7 +249,7 @@ const categoryAdded = (evt) => {
                 element.classList.add("success")
                 success3.appendChild(element);
                 setTimeout(() => {
-                    window.location.href = "homepage.html";
+                    window.location.href = "index.html";
                 }, 2000)
             }
 
