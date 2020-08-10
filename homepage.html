@@ -19,7 +19,9 @@
 
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent text-white">
                 <a class="navbar-brand home-logo" href="#">Inventory</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon bg-white"></span>
                 </button>
 
@@ -33,14 +35,15 @@
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Profile
                             </a>
                             <div class="dropdown-menu dropdown-text" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">Edit profile</a>
                                 <a class="dropdown-item" href="#">View Logs</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-red" href="#">Log out</a>
+                                <a class="dropdown-item text-red logout" href="#">Log out</a>
                             </div>
                         </li>
 
@@ -69,13 +72,17 @@
                         <div class="card-header text-black">Activity Log</div>
                         <div class="card-body">
 
-                            <table class="table table-responsive table-active">
-                                <th>Timestamp</th>
-                                <th>Description</th>
-                                <tr>
-                                    <td>12:30:01 1245</td>
-                                    <td>User logged in to inventory</td>
-                                </tr>
+                            <table class="table table-responsive none table-active">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Description</th>
+                                    </tr>
+
+                                </thead>
+                                <tbody class="tablelog">
+
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -102,7 +109,7 @@
                                     Update Product
                                 </a>
                             </p>
-                            <p data-toggle="modal" data-target="#exampleViewCategoryModal">
+                            <p data-toggle="modal" id="view" data-target="#exampleViewCategoryModal">
                                 <a href="#" class="fa fa-eye">
                                     View Category
                                 </a>
@@ -202,16 +209,17 @@
     <!-- /.footer -->
 
     <!-- View Category Modal -->
-    <div class="modal fade" id="exampleViewCategoryModal" tabindex="-1" aria-labelledby="exampleProductModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleViewCategoryModal" tabindex="-1" aria-labelledby="exampleProductModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleViewCategoryModalLabel">View Product Categories</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body catbody">
                     All Categories here
                 </div>
                 <div class="modal-footer">
@@ -221,7 +229,8 @@
         </div>
     </div>
     <!-- Add Category Modal -->
-    <div class="modal fade" id="exampleAddCategoryModal" tabindex="-1" aria-labelledby="exampleAddCategoryModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleAddCategoryModal" tabindex="-1" aria-labelledby="exampleAddCategoryModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -233,16 +242,18 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <input name="" class="form-control" placeholder="Category Name" type="text">
+                            <input name="" class="form-control catname" placeholder="Category Name" type="text">
                         </div>
                         <!-- form-group// -->
                         <div class="form-group">
-                            <input class="form-control" placeholder=" Category Description" type="text">
+                            <input class="form-control catdesc" placeholder=" Category Description" type="text">
                         </div>
                 </div>
+                <div class="loader none updateload1">Loading...</div>
+                <div class="success3"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save Category</button>
+                    <button type="submit" id="catbut" class="btn btn-primary">Save Category</button>
                 </div>
                 </form>
             </div>
@@ -263,30 +274,30 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <input name="" class="form-control" placeholder="Product Name" type="text">
+                            <input name="" class="form-control productname" placeholder="Product Name" type="text">
                         </div>
                         <!-- form-group// -->
                         <div class="form-group">
-                            <input class="form-control" placeholder="Product Category" type="text">
+                            <select name="" id="" class="form-control selectcategory"></select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Product Description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Product Image" type="file">
+                            <textarea class="form-control productdesc" placeholder="Product Description"></textarea>
                         </div>
                     </form>
                 </div>
+                <div class="loader none">Loading...</div>
+                <div class="success"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save Product</button>
+                    <button type="submit" class="btn btn-primary" id="addproduct">Save Product</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- View Product Modal -->
-    <div class="modal fade" id="exampleProductModal" tabindex="-1" aria-labelledby="exampleProductModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleProductModal" tabindex="-1" aria-labelledby="exampleProductModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -306,7 +317,8 @@
     </div>
 
     <!-- Update Product Modal -->
-    <div class="modal fade" id="exampleUpdateProductModal" tabindex="-1" aria-labelledby="exampleUpdateProductModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleUpdateProductModal" tabindex="-1"
+        aria-labelledby="exampleUpdateProductModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -318,31 +330,29 @@
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <input name="" class="form-control" placeholder="Product Name" type="text">
+                            <select name="" id="" class="form-control selectproduct"></select>
                         </div>
-                        <!-- form-group// -->
+
                         <div class="form-group">
-                            <input class="form-control" placeholder="Product Category" type="text">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Product Description"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" placeholder="Product Image" type="file">
+                            <input class="form-control productnum" placeholder="Product Quantity" type="number">
                         </div>
                     </form>
                 </div>
+                <div class="loader none updateload">Loading...</div>
+                <div class="success2"></div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Update</button>
+                    <button type="button" id="update" class="btn btn-primary">Update</button>
                 </div>
             </div>
         </div>
     </div>
-
+    <script src="js/product.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
 
 </body>
 

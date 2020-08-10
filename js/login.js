@@ -28,7 +28,7 @@ const submitLogin = (evt) => {
                 if (res.data.role === "user") {
                     window.location.href = "homepage.html"
                 } else if (res.data.role === "supervisor") {
-                    window.location.href = "homepage.html"
+                    window.location.href = "supervisor.html"
                 } else if (res.data.role === "admin") {
                     window.location.href = "homepage.html"
                 }
