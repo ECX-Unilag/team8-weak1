@@ -43,13 +43,7 @@ const submitSignup = (evt) => {
             .then(res => {
                 if (res.status === "success") {
                     localStorage.setItem("InventStore", JSON.stringify(res.data))
-                    if (res.data.role === "user") {
-                        window.location.href = "homepage.html"
-                    } else if (res.data.role === "supervisor") {
-                        window.location.href = "homepage.html"
-                    } else if (res.data.role === "admin") {
-                        window.location.href = "/pages/farmers/f-dashboard.html"
-                    }
+                    window.location.href = "log-in.html"
                 } else {
                     console.log(res);
                     loader.classList.add("none");
