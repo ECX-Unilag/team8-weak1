@@ -46,6 +46,11 @@ The admin functionality is not ready.
 
 The supervisor major role is to confirm the outgoing stock or product, their is a supervisor page which list products going out and the supervisor confirms it.
 
+Test login for supervisor
+
+email - super@yahoo.com
+password - 123456
+
 ## Features
 
  Add product
