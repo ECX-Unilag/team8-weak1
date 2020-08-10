@@ -38,17 +38,28 @@ The first thing to do to start keeping track is to add category and add product,
 after adding a product, the update product button is used to update the count of the stock or product moving out.
 Since most stock or product will have similar categories, their is a category field when adding product. the categories of product or stock used to added before you start adding product because it is requires in the add product form.
 
+The home page also displays an activity log of everythig the user does.
+
+There are 3 user roles, everyone signup as a user but the admin can make a user a supervisor or admin.
+
+The admin functionality is not ready.
+
+The supervisor major role is to confirm the outgoing stock or product, their is a supervisor page which list products going out and the supervisor confirms it.
+
 ## Features
 
-### Add product
-### Update product
-### View products
-### Add category
-### View Category
-### Login
-### Signup
-### View Activity log
-### Confirm product
+ Add product
+Update product
+View products
+Add category
+View Category
+Login
+Signup
+View Activity log
+Confirm product
+
+
+
 
 ## Documentation
 
