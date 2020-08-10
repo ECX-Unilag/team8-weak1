@@ -7,7 +7,9 @@ const {
 
 exports.getLog = async (req, res) => {
     try {
-        const Logs = await Log.find().populate("user").populate("product")
+        const Logs = await Log.find().populate("user").populate("product").sort({
+            date: 'desc'
+        });
         return successResMsg(res, 200, Logs);
     } catch (err) {
         return errorResMsg(res, 500, err);
@@ -18,7 +20,9 @@ exports.getLog = async (req, res) => {
 exports.getUserLog = async (req, res) => {
     try {
         console.log(req.params.id)
-        const Logs = await Log.find({ user: req.params.id}).populate("user").populate("product")
+        const Logs = await Log.find({ user: req.params.id}).populate("user").populate("product").sort({
+            date: 'desc'
+        });
         return successResMsg(res, 200, Logs);
     } catch (err) {
         return errorResMsg(res, 500, err);

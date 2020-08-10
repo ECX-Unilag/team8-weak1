@@ -27,7 +27,9 @@ exports.addProduct = async (req, res) => {
 
 exports.getProducts = async (req, res) => {
     try {
-        const Products = await Product.find();
+        const Products = await Product.find().sort({
+            date: 'desc'
+        });;
         return successResMsg(res, 200, Products);
     } catch (err) {
         return errorResMsg(res, 500, err);
